@@ -5,13 +5,18 @@ import java.util.Scanner;
 public class MenuManager {
 
     private final SolutionManager sm;
+
     private final int days;
+
+    private boolean runAll;
 
     public MenuManager(){
 
         sm = new SolutionManager();
 
-        days = 1;
+        runAll = false;
+
+        days = 2;
 
     }
 
@@ -19,7 +24,7 @@ public class MenuManager {
 
         Scanner sc = new Scanner(System.in);
 
-        int option = -1;
+        int option;
 
         System.out.println("""
                 Welcome to skoopz's AOC2023 solutions!
@@ -32,18 +37,24 @@ public class MenuManager {
                 System.out.println("\t" + (i+1) + ") Day " + (i+1));
             }
 
-            System.out.println("\t" + (days + 1) + ") Exit");
+            System.out.println("\t" + (days + 1) + ") Run all days");
+            System.out.println("\t" + (days + 2) + ") Exit");
 
             System.out.print("Your selection: ");
 
-            if(sc.hasNextInt()){
-                if(option == days + 1) return false;
+            option = (sc.hasNextInt()) ? sc.nextInt() : -1;
+
+            if(option > 0 && option <= (days + 2)){
+
+                if(option == days + 2) return false;
                 else {
-                    sm.selectDay(sc.nextInt());
+                    if(option != days + 1) sm.selectDay(option);
+                    else runAll = true;
                     return true;
                 }
+
             } else {
-                System.out.println("ERROR: Please select a number from 1 to " + (days + 1) + ":");
+                System.out.print("ERROR: Please select a number from 1 to " + (days + 2) + ": ");
                 sc.next();
             }
 
@@ -53,7 +64,8 @@ public class MenuManager {
 
     public void showDayResults(){
 
-        sm.runSolution();
+        if(runAll) sm.runAll(days);
+        else sm.runSolution();
 
     }
 

@@ -10,13 +10,19 @@ public class Day1 implements Solution {
 
     private final String INPUT_FOLDER = "inputs/";
 
-    public int easy() {
+    private final String filename;
 
-        String filename = (test) ? "test.txt" : "input.txt";
+    public Day1(){
+
+        filename = (test) ? "test.txt" : "day1/input.txt";
+
+    }
+
+    public int easy() {
 
         Pair<Integer, Integer> current;
 
-        try(Reader rd = new FileReader(INPUT_FOLDER + filename)){
+        try(Reader rd = new FileReader(INPUT_FOLDER + this.filename)){
 
             BufferedReader br = new BufferedReader(rd);
 
@@ -45,11 +51,9 @@ public class Day1 implements Solution {
     @Override
     public int hard() {
 
-        String filename = (test) ? "test.txt" : "input.txt";
-
         Pair<Integer, Integer> current;
 
-        try(Reader rd = new FileReader(INPUT_FOLDER + filename)){
+        try(Reader rd = new FileReader(INPUT_FOLDER + this.filename)){
 
             BufferedReader br = new BufferedReader(rd);
 
@@ -57,7 +61,6 @@ public class Day1 implements Solution {
 
             for(String line = br.readLine(); line != null; line = br.readLine()){
 
-                //Pair<Integer, Integer> firstLast = stringToPair(line);
                 line = convertNumbers(line);
 
                 current = stringToPair(line);

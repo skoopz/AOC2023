@@ -1,16 +1,28 @@
 package util;
 
 import day.Day1;
+import day.Day2;
 import day.Solution;
+
+import java.util.ArrayList;
 
 public class SolutionManager {
 
     private Solution sol;
 
+    private final ArrayList<Long> allTimes;
+
+    public SolutionManager(){
+
+        allTimes = new ArrayList<>();
+
+    }
+
     public void selectDay(int day){
 
         switch(day){
             case 1 -> sol = new Day1();
+            case 2 -> sol = new Day2();
         }
 
     }
@@ -29,7 +41,7 @@ public class SolutionManager {
 
         System.out.println("\tEasy:");
         System.out.println("\t\tResult: " + result);
-        System.out.println("\t\tTotal runtime: " + (endTime-startTime)/1000 + "ms\n");
+        System.out.println("\t\tTotal runtime: " + (endTime-startTime) / 1000 + "ms\n");
 
         startTime = System.nanoTime();
 
@@ -39,7 +51,19 @@ public class SolutionManager {
 
         System.out.println("\tHard:");
         System.out.println("\t\tResult: " + result);
-        System.out.println("\t\tTotal runtime: " + (endTime-startTime)/1000 + "ms\n");
+        System.out.println("\t\tTotal runtime: " + (endTime-startTime) / 1000 + "ms");
+
+    }
+
+    public void runAll(int days){
+
+        for(int i = 1; i <= days; i++){
+
+            selectDay(i);
+
+            runSolution();
+
+        }
 
     }
 
