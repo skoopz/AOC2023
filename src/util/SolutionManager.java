@@ -1,8 +1,6 @@
 package util;
 
-import day.Day1;
-import day.Day2;
-import day.Solution;
+import day.*;
 
 import java.util.ArrayList;
 
@@ -23,6 +21,7 @@ public class SolutionManager {
         switch(day){
             case 1 -> sol = new Day1();
             case 2 -> sol = new Day2();
+            case 3 -> sol = new Day3();
         }
 
     }

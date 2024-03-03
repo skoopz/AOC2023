@@ -16,7 +16,7 @@ public class MenuManager {
 
         runAll = false;
 
-        days = 2;
+        days = 3;
 
     }
 
