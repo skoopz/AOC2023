@@ -14,6 +14,10 @@ Let's hope this year I have enough time to implement some kind of chart to make 
 Interesting day. I managed to join the easy and hard solutions, so it is pretty fast, but the first takes more time. I plan to add more comments to the code, so if I ever read it I remember what it does.
 ### EUREKA! The chart is a work in progress!
 
-## TBD
+## Day 3: Gear Ratios
+
+Back on track with the problems! After this big break, I'm full of energy, and most importantly, ideas! This day was simple, but I made a mistake on the coordinates' labeling, and this led to a hard-to-find issue. However, it was nothing that some thorough debugging couldn't fix.
+
+## TBD...
 
 Let's see what comes next!
