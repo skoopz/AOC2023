@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 public class Day3 implements Solution {
 
-    private final String INPUT_FOLDER = "inputs/";
-
     private final String filename;
 
     private final boolean test = false;

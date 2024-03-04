@@ -22,6 +22,7 @@ public class SolutionManager {
             case 1 -> sol = new Day1();
             case 2 -> sol = new Day2();
             case 3 -> sol = new Day3();
+            case 4 -> sol = new Day4();
         }
 
     }

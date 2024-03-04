@@ -16,7 +16,7 @@ public class MenuManager {
 
         runAll = false;
 
-        days = 3;
+        days = 4;
 
     }
 
@@ -45,6 +45,8 @@ public class MenuManager {
             option = (sc.hasNextInt()) ? sc.nextInt() : -1;
 
             if(option > 0 && option <= (days + 2)){
+
+                sc.close();
 
                 if(option == days + 2) return false;
                 else {
